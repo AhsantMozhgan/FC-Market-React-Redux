@@ -4,20 +4,27 @@ FC Market is a small e-commerce app I built to practice connecting a React/Redux
 
 There's no database, the backend just serves product data from a JS array, but the frontend talks to it exactly like it would talk to a real API, which was the point.
 
-**Live demo:**
-[Watch the demo](./docs/demo.mov)
+## 🎥 **Demo video:**
+<!-- https://github.com/user-attachments/assets/REPLACE_WITH_YOUR_UPLOAD_ID -->
+[https://github.com/user-attachments/assets/5b1be73f-32a8-4e64-b36e-21890f6d9ae2](https://github.com/user-attachments/assets/cb4bb300-67a5-4a40-9d21-c802c5d5fcb6)
 
 
-## Screenshots
+## 📸  **Screenshots:**
 
 **product listing page**
-![Home page](./docs/Screenshot1.png)
+<!--![Home page](./docs/Screenshot1.png)-->
+
+<img width="70%" height="70%" alt="Screenshot1" src="https://github.com/user-attachments/assets/997e1e50-9c41-45ff-ba7c-0e9751b17b4c" />
 
 **Product detail page**
-![Product detail](./docs/Screenshot2.png)
+<!--![Product detail](./docs/Screenshot2.png)-->
+<img width="70%" height="70%" alt="Screenshot2" src="https://github.com/user-attachments/assets/c98f8e31-596b-47f7-9e8a-123493c189d2" />
 
 **Total price page**
-![Total price](./docs/Screenshot3.png)
+<!--![Total price](./docs/Screenshot3.png)-->
+<img width="70%" height="70%" alt="Screenshot3" src="https://github.com/user-attachments/assets/7a29922a-584c-4582-803b-069e45d3e091" />
+
+
 
 ## What it does
 
