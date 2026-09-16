@@ -67,6 +67,8 @@ npm run dev
 
 Runs the app at `http://localhost:5173` (Vite will use the next available port if this one is busy).
 
+Note: node_modules/ is excluded via .gitignore, running npm install will regenerate it.
+
 **3. Open the app**
 
 Visit the URL printed in your terminal, e.g. `http://localhost:5173`.
