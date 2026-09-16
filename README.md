@@ -2,20 +2,21 @@
 
 FC Market is a small e-commerce app I built to practice connecting a React/Redux frontend to a real backend instead of just working off static data. It's got a product catalog, a product detail page, and a shopping cart that actually persists if you refresh the page.
 
-There's no database — the backend just serves product data from a JS array — but the frontend talks to it exactly like it would talk to a real API, which was the point.
+There's no database, the backend just serves product data from a JS array, but the frontend talks to it exactly like it would talk to a real API, which was the point.
 
 **Live demo:**
+[Watch the demo](./docs/demo.mov)
 
 
 ## Screenshots
 
-**Home — product listing**
+**product listing page**
 ![Home page](./docs/Screenshot1.png)
 
-**Add to cart page**
-![Add to cart](./docs/Screenshot2.png)
+**Product detail page**
+![Product detail](./docs/Screenshot2.png)
 
-**Cart**
+**Total price page**
 ![Total price](./docs/Screenshot3.png)
 
 ## What it does
@@ -94,6 +95,6 @@ FC-Market-React-Redux/
     └── models/
 ```
 
-## 👨‍💻 Author
+## Author
 
 **Mozhgan Ahsant**
