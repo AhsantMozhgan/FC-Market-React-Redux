@@ -1,88 +1,99 @@
-# FC Market
+# 🛒 FC Market
 
-FC Market is a full-stack e-commerce demo application built with **React**, **Redux**, and **Express**. It features a product catalog, product detail pages, and a persistent shopping cart.
+FC Market is a small e-commerce app I built to practice connecting a React/Redux frontend to a real backend instead of just working off static data. It's got a product catalog, a product detail page, and a shopping cart that actually persists if you refresh the page.
 
-## Features
+There's no database — the backend just serves product data from a JS array — but the frontend talks to it exactly like it would talk to a real API, which was the point.
 
-- 🛍️ Browse a catalog of products fetched from a REST API
-- 🔍 View detailed information for each product
-- 🛒 Add and remove items from a shopping cart
-- 💾 Cart contents persist across page reloads via `localStorage`
-- ⚡ Fast dev experience powered by Vite
-- 🎨 Responsive UI built with React-Bootstrap
+**Live demo:**
 
-## Tech Stack
 
-| Layer | Technologies |
-|-------|--------------|
-| Frontend | React (Vite), React Router DOM, Redux, React-Redux, Redux-Thunk, React-Bootstrap, Axios, Font Awesome |
-| Backend | Node.js, Express, Nodemon |
+## Screenshots
+
+**Home — product listing**
+![Home page](./docs/Screenshot1.png)
+
+**Add to cart page**
+![Add to cart](./docs/Screenshot2.png)
+
+**Cart**
+![Total price](./docs/Screenshot3.png)
+
+## What it does
+
+- Loads products from the backend instead of a hardcoded file
+- Product detail pages for each item
+- Add/remove items from a cart, with the total updating automatically
+- Cart survives a page refresh (saved to `localStorage`)
+- Basic responsive layout using React-Bootstrap
+
+## Stack
+
+**Frontend:** React (Vite), Redux + Redux Thunk, React Router, React-Bootstrap, Axios
+
+**Backend:** Node + Express, Nodemon for dev
+
+I split it into two folders (`frontend` and `backend`) since they run as two completely separate servers.
+
+## Running it locally
+
+You need both servers running at the same time, in two different terminals. Start the backend first, otherwise the homepage will just sit there loading until you refresh it.
+
+```bash
+git clone https://github.com/AhsantMozhgan/FC-Market-React-Redux.git
+cd FC-Market-React-Redux
+```
+
+**Backend:**
+```bash
+cd backend
+npm install
+npm start
+```
+Runs on `localhost:8000`.
+
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Runs on `localhost:5173` (Vite will bump to 5174 if that port's already taken).
+
+> `node_modules/` is excluded via `.gitignore` — running `npm install` regenerates it, nothing extra to do.
+
+## API
+
+Nothing fancy, just two endpoints:
+
+```
+GET /api/products       → all products
+GET /api/products/:id   → one product
+```
+
+## Routes
+
+| Route | What it shows |
+|-------|----------------|
+| `/` | Home page, product listing |
+| `/product/:id` | Product detail |
+| `/cart/:id?` | Cart page — visiting with an id (e.g. `/cart/3`) adds that product on load |
 
 ## Project Structure
 
 ```
 FC-Market-React-Redux/
-├── frontend/     # React + Redux client
-└── backend/      # Express REST API
+├── frontend/
+│   └── src/
+│       ├── action/       # Redux async action creators
+│       ├── reducer/      # Redux reducers
+│       ├── components/   # Reusable UI (Header, Footer, Product)
+│       └── pages/        # Route-level views (Home, Product, Cart)
+└── backend/
+    ├── routes/
+    ├── controllers/
+    └── models/
 ```
 
-## Getting Started
+## 👨‍💻 Author
 
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) v18 or higher
-- npm
-
-### Installation
-
-Clone the repo and install dependencies for both the backend and frontend:
-
-```bash
-git clone https://github.com/<your-username>/FC-Market-React-Redux.git
-cd FC-Market-React-Redux
-
-cd backend && npm install
-cd ../frontend && npm install
-```
-
-### Running Locally
-
-The app requires **two servers running at the same time** — start the backend first.
-
-**1. Start the backend** (from the project root):
-
-```bash
-cd backend
-npm start
-```
-
-Runs the API at `http://localhost:8000`.
-
-**2. Start the frontend** (in a new terminal, from the project root):
-
-```bash
-cd frontend
-npm run dev
-```
-
-Runs the app at `http://localhost:5173` (Vite will use the next available port if this one is busy).
-
-Note: node_modules/ is excluded via .gitignore, running npm install will regenerate it.
-
-**3. Open the app**
-
-Visit the URL printed in your terminal, e.g. `http://localhost:5173`.
-
-## API Reference
-
-| Method | Endpoint | Description |
-|--------|-----------|--------------|
-| `GET` | `/api/products` | Get all products |
-| `GET` | `/api/products/:id` | Get a single product by ID |
-
-## Roadmap
-
-- [ ] User authentication
-- [ ] Checkout flow
-- [ ] Persist cart to a database instead of `localStorage`
-- [ ] Product search and filtering
+**Mozhgan Ahsant**
